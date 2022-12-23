@@ -11,6 +11,9 @@ You must define these 2 variables with your nightscout information : nsUrl & nsT
 
 Works on iPhone 11, size defined for large widgets and may need to be adjusted for other iPhone models.
 
+
+If you don't see the whole arrow you have to reduce the font size here:
+
 ![IMG-5165](https://user-images.githubusercontent.com/52744345/209072436-06dc912e-cc5e-4190-ad59-f706ee0d49ab.PNG)
 
 
