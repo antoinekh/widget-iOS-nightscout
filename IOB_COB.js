@@ -28,20 +28,14 @@ async function createWidget(items) {
     const list = new ListWidget();
     let iob_cob, updated;
     
-	let nsDataV2 = await getNsDataV2();
+    let nsDataV2 = await getNsDataV2();
    
-    // create direction arrow
-    let directionString = await getDirectionString(nsDataV2.direction);
-  
-    
-    
     let tiob = nsDataV2.iob;
-
     let tcob = nsDataV2.cob;
 	
 
     iobcob = list.addText("" + tiob + "  ");
-        iobcob.font = Font.mediumSystemFont(20);
+    iobcob.font = Font.mediumSystemFont(20);
     iobcob = list.addText("" + tcob);
     iobcob.font = Font.mediumSystemFont(20);
     list.setPadding(40, 15, 40, 0);
@@ -50,58 +44,18 @@ async function createWidget(items) {
     updated = list.addText("" + updateTime);
     updated.font = Font.mediumSystemFont(8); 
      
-    
     list.refreshAfterDate = new Date(Date.now() + 30);
     return list;
 }
+
 async function getNsDataV2() {
     let url = nsUrl + "/api/v2/properties?&token=" + nsToken;
     let data = await new Request(url).loadJSON();
 	  return {
 		iob: data.iob.displayLine,
-    cob: data.cob.displayLine,
+    		cob: data.cob.displayLine,
 		mills: data.bgnow.mills
         
     };
     
-    
-}
-async function getDirectionString(direction) {
-    
-    let directionString
-    switch(direction) {
-        case 'NONE':
-        directionString = '⇼';
-        break;
-        case 'DoubleUp':
-        directionString = '⇈';
-        break;
-        case 'SingleUp':
-        directionString = '↑';
-        break;          
-        case 'FortyFiveUp':
-        directionString = '↗';
-        break;                  
-        case 'Flat':
-        directionString = '→';
-        break;                      
-        case 'FortyFiveDown':
-        directionString = '↘';
-        break;
-        case 'SingleDown':
-        directionString = '↓';
-        break;  
-        case 'DoubleDown':
-        directionString = '⇊';
-        break;
-        case 'NOT COMPUTABLE':
-        directionString = '-';
-        break;  
-        case 'RATE OUT OF RANGE':
-        directionString = '⇕';
-        break;
-        default:
-        directionString = '⇼';
-    }
-    return directionString;
 }
