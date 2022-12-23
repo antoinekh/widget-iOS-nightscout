@@ -9,6 +9,7 @@
 // INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
 // IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
 // OF THIS SOFTWARE.
+
 const nsUrl ='https://xxx'; // your nightscout url
 const nsToken =`your-ns-token`; // your nightscoutaccess token
 const glucoseDisplay = `mgdl`;
@@ -50,18 +51,16 @@ async function createWidget(items) {
     updated = list.addText("" + updateTime);
     updated.font = Font.mediumSystemFont(8); 
      
-    
     list.refreshAfterDate = new Date(Date.now() + 30);
     return list;
 }
+
 async function getNsDataV2() {
     let url = nsUrl + "/api/v2/properties?&token=" + nsToken;
     let data = await new Request(url).loadJSON();
 	  return {
                 bg: data.bgnow.mean,
 		direction: data.bgnow.sgvs[0].direction,
-		iob: data.iob.displayLine,
-                cob: data.cob.displayLine,
 		mills: data.bgnow.mills
         
     };
