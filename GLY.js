@@ -43,7 +43,7 @@ async function createWidget(items) {
 	}
   
     glucose = list.addText("  " + glucoseValue + " " + directionString);
-    glucose.font = Font.mediumSystemFont(40);
+    glucose.font = Font.mediumSystemFont(37);
     
     list.setPadding(30, 10, 30, 0);
     
