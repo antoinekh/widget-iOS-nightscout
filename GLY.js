@@ -39,7 +39,7 @@ async function createWidget(items) {
     
 	
     if(glucoseDisplay === `mmoll`){
-		glucoseValue = Math.round(nsDataV2.bg / 18 * 100) / 100;
+		glucoseValue = Math.round(nsDataV2.bg / 18 * 10) / 10;
 	}
   
     glucose = list.addText("  " + glucoseValue + " " + directionString);
