@@ -14,9 +14,9 @@ Works on iPhone 11, size defined for large widgets and may need to be adjusted f
 
 If you don't see the whole arrow you have to reduce the font size here:
 
-
+```
 glucose.font = Font.mediumSystemFont(37);
-
+```
 
 ![IMG-5165](https://user-images.githubusercontent.com/52744345/209072436-06dc912e-cc5e-4190-ad59-f706ee0d49ab.PNG)
 
