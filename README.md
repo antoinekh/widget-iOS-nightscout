@@ -5,7 +5,7 @@
 
 **required**: Scriptable 
 
-Testflight scriptable https://testflight.apple.com/join/uN1vTqxk
+https://apps.apple.com/app/scriptable/id1405459188
 
 You must define these 2 variables with your nightscout information : nsUrl & nsToken.
 
