@@ -13,7 +13,7 @@
 const nsUrl ='https://xxx'; // your nightscout url
 const nsToken =`your-ns-token`; // your nightscoutaccess token
 const glucoseDisplay = `mgdl`;
-//const glucoseDisplay = ` mmoll`;
+//const glucoseDisplay = `mmoll`;
 const dateFormat  = `fr-FR`;
 
 // Initialize Widget
